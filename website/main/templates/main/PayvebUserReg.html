@@ -15,8 +15,8 @@
 </tr>
 
 <tr>
-<td><label for="Username">Username  : </label></td>
-<td><input id="Username" maxlength="25" name="name" type="text" /></td>
+<td><label for="username">Username  : </label></td>
+<td><input id="username" maxlength="25" name="username" type="text" /></td>
 </tr>
 
 
@@ -43,14 +43,14 @@
 
     
 <tr>
-<td><label for="password">Password:</label></td>
-<td><input id="password" maxlength="25" name="pwd"
+<td><label for="pwd">Password:</label></td>
+<td><input id="pwd" maxlength="25" name="pwd"
 type="password" /></td>
 </tr>
     
 <tr>
-<td><label for="repassword">Reenter Password:</label></td>
-<td><input id="repassword" maxlength="25" name="repwd"
+<td><label for="repwd">Reenter Password:</label></td>
+<td><input id="repwd" maxlength="25" name="repwd"
 type="password" /></td>
 </tr>
 
@@ -61,4 +61,93 @@ type="password" /></td>
 </tbody>
 </table>
 </form>
+<script type="text/javascript">
+
+  function checkForm(form)
+  {	
+  	 if(form.name.value == "") {
+      alert("Error: Name cannot be blank!");
+      form.name.focus();
+      return false;
+    }
+
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.email.value == "") {
+      alert("Error: Email cannot be blank!");
+      form.email.focus();
+      return false;
+    }
+
+    if(form.country.value == "") {
+      alert("Error: Country name cannot be blank!");
+      form.country.focus();
+      return false;
+    }
+
+    if(form.state.value == "") {
+      alert("Error:  State name cannot be blank!");
+      form.state.focus();
+      return false;
+    }
+
+    if(form.city.value == "") {
+      alert("Error: City Name cannot be blank!");
+      form.city.focus();
+      return false;
+    }
+
+    if(form.pwd.value != "" && form.pwd.value == form.repwd.value) {
+      if(form.pwd.value.length < 8) {
+        alert("Error: Password must contain at least eight(8) characters!");
+        form.pwd.focus();
+        return false;
+      }
+		      
+
+      if(form.pwd.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert(" Thank you registering to Payveb " + form.pwd1.value);
+    return true;
+  }
+
+</script>
+
 </html>
