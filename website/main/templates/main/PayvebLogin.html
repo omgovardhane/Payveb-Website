@@ -1,0 +1,50 @@
+<html>
+<head>
+<title> Payveb-Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="login.php">
+<table width="20%" bgcolor="#99e699" align="center">
+
+<tr>
+<td colspan=2><center><font size=4><b>Payveb User Login</b></font></center></td>
+</tr>
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+</tr>
+
+<tr>
+<td><input type="submit" onclick="##" value="Login"></td>
+</tr>
+    
+<tr>
+<td><input type="submit" onclick="" value="Register User"></td>
+</tr>
+
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
+
+if(form.userid.value == "Username" && form.pwd.value == "pass")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+</script>
+
+</body>
+</html>
